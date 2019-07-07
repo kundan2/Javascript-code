@@ -1,0 +1,152 @@
+<html>
+<head>
+	<script>
+		function val()
+		{
+		var t1=f1.t1.value
+		
+		if (t1=="")
+		{
+		alert("enter username")
+		return false;
+		}
+		
+		if(t1.length<=5)
+		{
+			alert("more than 5 character")
+        return false;		
+		}
+		
+		var t2=f1.t2.value
+		
+		if(t2=="")
+		{
+		alert("Enter password")
+		return false;
+		}
+		
+		if(t2.length<5)
+		{
+		alert("password lenght is more than 5")
+		return false;
+		}
+		
+		var count=0;
+		
+		for(i=0;i<t2.length;i++)
+		{
+		if(t2.charCodeAt(i)>=65&&t2.charCodeAt(i)<=90)
+			{
+			 count++;
+			}
+		}
+		if(count==0)
+		{
+			alert("enter caps letter");
+			return false;
+		}
+		
+		var num=0;
+		
+		for(i=0;i<t2.length;i++)
+		{
+		if(t2.charCodeAt(i)>=48&&t2.charCodeAt(i)<=57)
+			{
+			 num++;
+			}
+		}
+		if(num==0)
+		{
+			alert("enter numeric value");
+			return false;
+		}
+		
+		var spe=0;
+		
+		for(i=0;i<t2.length;i++)
+		{
+		if((t2.charCodeAt(i)>=35&&t2.charCodeAt(i)<=42)||t2.charCodeAt(i)==64||t2.charCodeAt(i)==92)
+			{
+			 spe++;
+			}
+		}
+		if(spe==0)
+		{
+			alert("enter special character");
+			return false;
+		}
+		
+		
+		var t3=f1.t3.value
+				if(t3=="")
+		{
+			alert("enter confirm password")
+			return false;
+		}
+		
+		if(t2!=t3)
+		{
+		alert("password not match")
+		return false;
+		}
+		
+		var m=f1.m.value
+		 if(m=="")
+		 {
+		 alert("enter mobile number")
+		 return false;
+		 }
+		 
+		if(m.length!=10)
+		{
+		alert("mobile number must be 10 digits")
+		return false;
+		}
+		
+		var mo=0
+		for(i=0;i<m.length;i++)
+		{
+		if(m.charCodeAt(i)>=48&&m.charCodeAt(i)<=57)
+			{
+				mo++;
+			}
+		}
+		if(mo!=10)
+			{
+				alert("please enter only numeric value")
+				return false;
+			}
+			
+			var z=0
+			for(i=0;i<1;i++)
+		{
+			if(m.charCodeAt(0)>=55&&m.charCodeAt(0)<=57)
+			{
+			z++;
+			}
+		}
+			
+			if(z!=1)
+			{
+			alert("mobile number start with 7,8,9")
+			return false;
+			
+			}	
+			
+			
+		
+	}
+	</script>
+
+</head>
+
+<body>
+   <form name="f1" onsubmit="return val()">
+    Username<input type="text" name="t1"><br>
+    Password<input type="password" name="t2"><br>
+	Confirm Password<input type="password" name="t3"><br>
+	Mobile number<input type="text" name="m"><br>
+	<input type="submit">
+   </form>
+</body>
+</html>
